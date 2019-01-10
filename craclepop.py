@@ -1,4 +1,14 @@
 
+from sys import argv as argv
+
+try:
+    start = int(argv[1])
+    end = int(argv[2])
+except:
+    print("There is a problem with the supplied arguments")
+raise
+
+
 def stepdirection(start, end):
     # determine if we are stepping up or down
     if start > end:
@@ -42,5 +52,12 @@ def crackiterable(start=-1, end=-100):
         print("Unexpected error!")
         raise
 
+if __name__ == "__main__":
+    if 'start' in globals() and 'end' in globals():
+        crackiterable(start, end)
+    else:
+        crackiterable()
 
-crackiterable()
+
+
+
