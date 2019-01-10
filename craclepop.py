@@ -1,6 +1,7 @@
 
 from sys import argv as argv
 
+# attempt to set command line arguments as start and end values
 try:
     start = int(argv[1])
     end = int(argv[2])
@@ -8,9 +9,8 @@ except:
     print("There is a problem with the supplied arguments")
 raise
 
-
+# determine the direction of the count
 def stepdirection(start, end):
-    # determine if we are stepping up or down
     if start > end:
         end -= 1
         step = -1
@@ -20,7 +20,9 @@ def stepdirection(start, end):
     return start, end, step
 
 
-
+# generate list using default values or supplied arguments
+# then iterate over the list, checking for snap, crackle,
+# and cracklepop conditions.
 def crackiterable(start=-1, end=-100):
     try:
         totalcount = 0
@@ -52,6 +54,8 @@ def crackiterable(start=-1, end=-100):
         print("Unexpected error!")
         raise
 
+# if called from the command line, attempt to use arguments
+# and if no arguments exist call function with defaults
 if __name__ == "__main__":
     if 'start' in globals() and 'end' in globals():
         crackiterable(start, end)
