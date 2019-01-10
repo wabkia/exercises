@@ -4,21 +4,20 @@ def stepdirection(start, end):
     if start > end:
         end -= 1
         step = -1
-        return [start, end, step]
     else:
         end += 1
-        step = None
-        return [start, end, step]
+        step = 1
+    return start, end, step
 
 
 
-def crackiterable(start=-1, end=100):
+def crackiterable(start=-1, end=-100):
     try:
         totalcount = 0
         cracklepopcount = 0
         snapcount = 0
         cracklecount = 0
-        for number in range(stepdirection(start, end)):
+        for number in range(*stepdirection(start, end)):
             totalcount += 1
             if number % 3 == 0 and number % 5 == 0:
                 print("{0} - Cracklepop!\n").format(number)
