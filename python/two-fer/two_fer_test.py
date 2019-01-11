@@ -16,7 +16,7 @@ class TwoFerTest(unittest.TestCase):
         self.assertEqual(two_fer("Bob"), "One for Bob, one for me.")
 
     def test_non_string_input(self):
-        self.assertError(two_fer(frozenset("bob"), TypeError)
+        self.assertRaises(two_fer(frozenset("bob")), TypeError)
 
 if __name__ == '__main__':
     unittest.main()
