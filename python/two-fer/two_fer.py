@@ -1,2 +1,4 @@
 def two_fer(name="you"):
-    pass
+
+    while isinstance(name, str):
+    	return "One for {}, one for me.".format(name)
