@@ -3,7 +3,7 @@ def is_pangram(sentence):
 
     alphaset = frozenset("abcdefghijklmnopqrstuvxyz")
     try:
-        while alphaset.issuperset(alphaset.intersection(frozenset(sentence.lower()))):
+        while alphaset.issubset(alphaset.intersection(frozenset(sentence.lower()))):
             return True
         else:
             return False
