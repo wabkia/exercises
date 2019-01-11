@@ -9,3 +9,6 @@ def is_armstrong(number):
             armstrongtotal += n * numberlength 
         while number == armstrongtotal:
             return
+    except:
+        print("somethign went wrong, like you didn't give an integer to the function")
+        raise
